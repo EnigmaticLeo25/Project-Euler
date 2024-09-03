@@ -1,0 +1,15 @@
+var progress_bar_data = JSON.parse(document.getElementById('json_progress_data').innerHTML);
+for (var key in progress_bar_data) {
+   document.getElementById(key).style.width = progress_bar_data[key] + "%";
+}
+if (document.getElementById('json_opacity_data')) {
+   var opacity_data = JSON.parse(document.getElementById('json_opacity_data').innerHTML);
+   for (var key in opacity_data) {
+      r = 255 * opacity_data[key];
+      if (r > 255) r = 255;
+      g = 136 * opacity_data[key];
+      document.getElementById(key).style.backgroundColor = "rgb(" + r + ", " + g + ", 0)";
+   }
+}
+
+
